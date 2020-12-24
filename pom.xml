@@ -9,6 +9,19 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
   </properties>
+ 
+  <build>
+  	<plugins>
+  		<plugin>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+  				<source>${java.version}</source>
+  				<target>${java.version}</target>
+  				<encoding>utf-8</encoding>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
 
   <!-- 의존성등 : 해당 프로젝트에서 사용할 의존성(라이브러리)를 관리한다 -->
   <dependencies>
