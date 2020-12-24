@@ -1,0 +1,25 @@
+단축키 
+perspective - view들의 모임 
+
+1. 로컬 저장소 생성(jsp프로젝트)
+   
+2. gitinore파일 생성
+   (git으로 관리하지 않을 파일, 폴더를 관리)
+   commit을 하지 전에 .gitignore파일에 관리 제외 대상을 등록해야 한다
+
+   gitignore.io를 통해 .gitignore의  손쉽게 작성  
+
+3. github 에 저장소 생성(jsp)
+
+4. push (source tree)
+
+
+서블릿 생성
+1. HttpServlet 클래스를 상속한 클래스를 생성
+
+2. url-mapping 
+ 		- web.xml 설정하는 방법
+ 		- 서블릿 클래스를 만들 때 @webSerlvet 어노테이션을 통해 url 등록
+ 		
+* 패키지 작명 : 도메인 역순(메이브 프로젝트의 Group id)
+			kr.or.ddit.모듈명.서브모듈
