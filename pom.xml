@@ -25,13 +25,26 @@
 
   <!-- 의존성등 : 해당 프로젝트에서 사용할 의존성(라이브러리)를 관리한다 -->
   <dependencies>
-  	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+  		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
 		    <version>3.0.1</version>
 		    <scope>provided</scope>
 		</dependency>
-
+		
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>1.2.3</version>
+		</dependency>
+		
+		<!-- scope 
+			생략시 (default) compile - 컴파일 과정부터 배포되는 과정까지 해당 라잉브러잉가 필요함의 의미
+			test : test 과정까지만 필요, 배포시(packaging)시 제외 됨
+			provided(제공이 되어짐) : 운영환경에서 해당 라이브러잉가 제공이됨 (배포할 때 빠짐)
+			 -->
+		
   </dependencies>
 </project>

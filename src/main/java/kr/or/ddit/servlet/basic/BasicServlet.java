@@ -9,9 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+
 public class BasicServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	
+	private static final Logger logger = LoggerFactory.getLogger(BasicServlet.class);
+
 	@Override
 	public void init() throws ServletException {
 		System.out.println("basicServlet.init()");
@@ -21,6 +27,18 @@ public class BasicServlet extends HttpServlet{
 	// GET, POST, DELETE, PUSH, HEAD... : HTTP 메소드
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		logger.debug("basicServlet.doGet()");
+		
+		//만약에 log level을 debug보다 높은 레벨로 설정할 경우
+		//로그를 생성하지는 않지만 메소드 인자인 문자열  + 문자열  ==> 문자열 결합 연산은 발생한다
+		
+		//if(설정로그레벨 <= debug) {
+			logger.debug("basicServlet.doGet() userid parameter : " + req.getParameter("userid") );
+		//}
+		
+		logger.debug("basicServlet.doGet() userid parameter : {}{}" , 
+								req.getParameter("userid"), req.getParameter("password") );
+		
 		resp.setContentType("text/html; charset=utf-8");
 		
 		//재정의
