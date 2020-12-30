@@ -1,5 +1,6 @@
 단축키 
 perspective - view들의 모임 
+ctrl +3 검색
 
 1. 로컬 저장소 생성(jsp프로젝트)
    
@@ -9,9 +10,8 @@ perspective - view들의 모임
 
    gitignore.io를 통해 .gitignore의  손쉽게 작성  
 
-3. github 에 저장소 생성(jsp)
 
-4. push (source tree)
+3. github 에 저장소 생성(jsp)
 
 
 서블릿 생성
@@ -23,3 +23,34 @@ perspective - view들의 모임
  		
 * 패키지 작명 : 도메인 역순(메이브 프로젝트의 Group id)
 			kr.or.ddit.모듈명.서브모듈
+
+서블릿프로그래밍 
+
+servlet life cycle 
+
+init()  ->  Servlet   -> destory()
+        service() -> doXXX()
+
+톰캣에서 서비스 메소드를 요청 
+get이든 post든 하고 싶으면  서비스를 overrride  
+https://mvnrepository.com/
+중앙저장소
+
+window + e 
+D:\A_TeachingMaterial\6.JspSpring\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
+localhost8081/jsp/basicServlet
+
+프로젝트의 복잡성
+ 
+라이브러리없이 프로젝트를 진행하는 경우는 없음
+라이브러리를 다운 받는다
+프로텍트에 라이브러리를 등록한다
+라이브러리가 변경될 때 새로운 프로젝트를 할 때마다 반복 
+메이블 빌드도규ㅠ 
+1. 프로젝트레서 필요ㅇ로 하는 라이브러리 관리의 어려움 
+2. 프로젝트를 배포하는데 있어서 공동된 작업이 보이기 시작
+	1.프로젝트 java파일을 컴파일
+	2.class에서 사용한 성절파일들을 복사
+	3.운영코드를 테스트 할수 있는 데스트 자바 코드 컴파일
+	4. 테스르 코드 통과 여부
+	5.테스트 코드를 제외한 운영코드로 war파일로 패키징
