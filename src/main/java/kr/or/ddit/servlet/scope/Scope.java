@@ -43,11 +43,10 @@ public class Scope extends HttpServlet{
 //		req.getSession().setAttribute("session", scope + "_session");
 		
 //		application : 속성명=application, 속성값=scope파라미터값 + "_application"
-		ServletContext application = getServletContext();
+		ServletContext application = req.getServletContext();
 		application.setAttribute("application", scope + "_application");
 		
 //		webapp/jsp/scopeResult.jsp로 forward
-		
 		req.getRequestDispatcher("/jsp/scopeResult.jsp").forward(req, resp);
 	}
 }

@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%=session.getAttribute("start") %> *
-	<%=session.getAttribute("end") %>  =
-	
-	<%=session.getAttribute("mulResult") %>
+	<%
+		if(true){
+			throw new RuntimeException();
+		}
+	%>
 </body>
 </html>

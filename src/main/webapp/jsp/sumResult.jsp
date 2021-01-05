@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	sumResult  : <%=session.getAttribute("sumResult") %>
+	<%=session.getAttribute("num1") %> 부터
+	<%=session.getAttribute("num2") %>  까지의 합은 ?
+	<%=session.getAttribute("sumResult") %>
 </body>
 </html>

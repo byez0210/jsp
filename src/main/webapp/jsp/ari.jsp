@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%=session.getAttribute("start") %> *
-	<%=session.getAttribute("end") %>  =
-	
-	<%=session.getAttribute("mulResult") %>
+	<% int a =5;
+	   int b = 0;
+	   int c = a / b ;
+	%>
 </body>
 </html>

@@ -38,6 +38,8 @@ public class mulCalculation extends HttpServlet{
 		logger.debug(result+"");
 		
 		HttpSession session =req.getSession();
+		session.setAttribute("num1", num1);
+		session.setAttribute("num2", num2);
 		session.setAttribute("mulResult", result);
 		
 		req.getRequestDispatcher("/jsp/mulResult.jsp").forward(req, resp);

@@ -40,6 +40,8 @@ public class sumCalculation extends HttpServlet{
 		logger.debug(result+"");
 		
 		HttpSession session =req.getSession();
+		session.setAttribute("start", start);
+		session.setAttribute("end", end);
 		session.setAttribute("sumResult", result);
 		
 		req.getRequestDispatcher("/jsp/sumResult.jsp").forward(req, resp);
