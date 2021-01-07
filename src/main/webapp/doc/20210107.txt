@@ -1,0 +1,3 @@
+cookie는 클라이언트(javascript)에서 조작이 가능하지만 
+		서버에서도 (HttpServletRequest) - 요청 시 같이 전송된 크키 정보 조회
+				 HttpServletResponse - 응답 시클라이언트에게 쿠키 정보 추가 조작이 가능하다
