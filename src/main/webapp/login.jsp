@@ -91,9 +91,9 @@
       <form class="form-signin" id="frm" action="<%=request.getContextPath()%> /loginController" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="userid" class="sr-only">userid</label>
-        <input type="text" id="userid" name="userid" class="form-control" placeholder="사용자 아이디" required autofocus>
+        <input type="text" id="userid" name="userid" class="form-control" placeholder="사용자 아이디"  value="sally" required autofocus>
         <label for="pass" class="sr-only">Password</label>
-        <input type="password" id="pass" name="pass" class="form-control" placeholder="사용자 비밀번호" value="brownpass" required>
+        <input type="password" id="pass" name="pass" class="form-control" placeholder="사용자 비밀번호" value="sallyPass" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" id="rememberme" value="remember-me"> Remember me

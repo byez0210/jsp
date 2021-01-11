@@ -9,53 +9,47 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- servlet 등록, 해당 서블릿에서 처리를 할 url 등록 -->
   <servlet>
-  	<servlet-name>basicServlet</servlet-name>
-  	<servlet-class>kr.or.ddit.servlet.basic.BasicServlet</servlet-class>
-  	<load-on-startup>1</load-on-startup>
+    <servlet-name>basicServlet</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.basic.BasicServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
-  
   <servlet>
-  	<servlet-name>TimesTablesServlet</servlet-name>
-  	<servlet-class>kr.or.ddit.servlet.basic.TimesTablesServlet</servlet-class>
+    <servlet-name>TimesTablesServlet</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.basic.TimesTablesServlet</servlet-class>
   </servlet>
-  
-  
   <servlet-mapping>
-  	<servlet-name>TimesTablesServlet</servlet-name>
-  	<url-pattern>/TimesTablesServlet</url-pattern>
+    <servlet-name>TimesTablesServlet</servlet-name>
+    <url-pattern>/TimesTablesServlet</url-pattern>
   </servlet-mapping>
-  
-  
-  <!-- servlet에서 처리할 url 매핑 -->
   <servlet-mapping>
-  	<servlet-name>basicServlet</servlet-name>
-  	<url-pattern>/basicServlet</url-pattern>
+    <servlet-name>basicServlet</servlet-name>
+    <url-pattern>/basicServlet</url-pattern>
   </servlet-mapping>
-  
-  <!-- error page 설정 -->
   <error-page>
-  		<error-code>404</error-code>
-  		<location>/error/404/404.jsp</location>
+    <error-code>404</error-code>
+    <location>/error/404/404.jsp</location>
   </error-page>
-  
   <error-page>
-  		<error-code>500</error-code>
-  		<location>/error/500/500.html</location>
+    <error-code>500</error-code>
+    <location>/error/500/500.html</location>
   </error-page>
-  
   <error-page>
-  	<!--class full name :패키지.클래스명 -->
-  	<exception-type>java.lang.ArithmeticException</exception-type>
-  	<location>/error/type/ariError.jsp</location>
+    <exception-type>java.lang.ArithmeticException</exception-type>
+    <location>/error/type/ariError.jsp</location>
   </error-page>
-  
   <error-page>
-  	<!--class full name :패키지.클래스명 -->
-  	<exception-type>java.lang.RuntimeException</exception-type>
-  	<location>/error/type/runError.jsp</location>
+    <exception-type>java.lang.RuntimeException</exception-type>
+    <location>/error/type/runError.jsp</location>
   </error-page>
-  
+  <servlet>
+    <description></description>
+    <display-name>PagingUser</display-name>
+    <servlet-name>PagingUser</servlet-name>
+    <servlet-class>kr.or.ddit.user.controller.PagingUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PagingUser</servlet-name>
+    <url-pattern>/PagingUser</url-pattern>
+  </servlet-mapping>
 </web-app>
