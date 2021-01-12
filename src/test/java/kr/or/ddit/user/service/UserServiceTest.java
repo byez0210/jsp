@@ -61,15 +61,16 @@ public class UserServiceTest {
 		/***Given***/
 		UserServiceI userService = new UserService();
 		PageVo  vo = new PageVo(2,5);
-		Map<String, Object>  map = userService.selectPagingUser(vo);
 		
 		/***When***/
+		Map<String, Object>  map = userService.selectPagingUser(vo);
 		List<UserVo> userList = (List<UserVo>)map.get("userList");
 		int userCnt = (int)map.get("userCnt");
 		int pagination = (int) Math.ceil((double)userCnt/vo.getPageSize());
-		System.out.println(pagination);
+//		System.out.println(pagination);
 		
 		/***Then***/
 		assertEquals(4, pagination);
+		assertEquals(16, userCnt);
 	}
 }
