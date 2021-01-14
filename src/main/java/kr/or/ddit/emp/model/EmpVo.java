@@ -1,11 +1,14 @@
 package kr.or.ddit.emp.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class EmpVo {
 	private int empno;
 	private String ename;
 	private String job;
 	private String mgr;
-	private String hiredate;
+	private Date hiredate;
 	private String sal;
 	private String comm;
 	private String deptno;
@@ -16,8 +19,6 @@ public class EmpVo {
 	public int getEmpno() {
 		return empno;
 	}
-
-
 	public void setEmpno(int empno) {
 		this.empno = empno;
 	}
@@ -39,11 +40,19 @@ public class EmpVo {
 	public void setMgr(String mgr) {
 		this.mgr = mgr;
 	}
-	public String getHiredate() {
+	public Date getHiredate() {
 		return hiredate;
 	}
-	public void setHiredate(String hiredate) {
+	public void setHiredate(Date hiredate) {
 		this.hiredate = hiredate;
+	}
+	public String gethireDateFmt() {
+		if (this.hiredate == null) {
+			return "";
+		}else {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
+			return sdf.format(this.hiredate);
+		}
 	}
 	public String getSal() {
 		return sal;

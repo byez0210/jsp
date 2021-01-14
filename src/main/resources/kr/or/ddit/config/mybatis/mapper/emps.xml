@@ -8,5 +8,24 @@
   		SELECT *
   		FROM emp 
   	</select>
+  	
+  	  <select id="selectPagingEmp" resultType="empVo"  parameterType="pageVo">
+  	SELECT * 
+	FROM 
+	    (SELECT ROWNUM rn,a.* 
+	    FROM 
+	        (SELECT *
+	         FROM emp
+	         ORDER BY empno) a
+	    WHERE ROWNUM &lt;= #{page} * #{pageSize})
+	WHERE rn BETWEEN (#{page}-1)*#{pageSize} + 1 AND #{page} * #{pageSize}
+  </select>
+  
+  <select id="selectAllCnt" resultType="int">
+  	select count(*) 
+  	from emp 
+  </select>
+  
+  
   
   </mapper>

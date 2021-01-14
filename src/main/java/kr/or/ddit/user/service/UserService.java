@@ -16,13 +16,13 @@ public class UserService implements UserServiceI {
 	
 	@Override
 	public List<UserVo> selectAllUser() {
-		 List<UserVo> list =null;
+		 List<UserVo> userList =null;
 		try {
-			list = userDao.selectAllUser();
+			userList = userDao.selectAllUser();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return list;
+		return userList;
 	}
 
 	@Override
@@ -45,5 +45,17 @@ public class UserService implements UserServiceI {
 		
 		return map;
 		
+	}
+
+	@Override
+	public int modifyUser(UserVo userVo) {
+		
+		return userDao.modifyUser(userVo);
+	}
+
+	@Override
+	public int registUser(UserVo userVo) {
+		
+		return userDao.registUser(userVo);
 	}
 }

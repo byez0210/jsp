@@ -23,7 +23,7 @@
 <link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
 		<%List<UserVo> userList = (List<UserVo>)request.getAttribute("userList"); %>
 <script type="text/javascript">
-	// 문서로딩이 완료돠고 나서 실행되는 영역
+	// 문서로딩이 완료되고 나서 실행되는 영역
 	$(function(){
 		$(".user").on("click",function(){
 			//this : 클릭 이벤트가 발생한 element
@@ -82,7 +82,7 @@
 						</table>
 					</div>
 
-					<a class="btn btn-default pull-right">사용자 등록</a>
+					<a class="btn btn-default pull-right"  href="<%=request.getContextPath()%>/registUser">사용자 등록</a>
 
 					<div class="text-center">
 						<% PageVo pageVo = ((PageVo)request.getAttribute("pageVo"));
