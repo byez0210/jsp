@@ -1,3 +1,4 @@
+<%@page import="kr.or.ddit.common.model.PageVo"%>
 <%@page import="kr.or.ddit.emp.model.EmpVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -65,15 +66,35 @@
 						</table>
 					</div>
 
-					<a class="btn btn-default pull-right"> 등록</a>
+					<a class="btn btn-default pull-right">직원 등록</a>
 
 					<div class="text-center">
+						<% PageVo pageVo =  (PageVo)request.getAttribute("pageVo"); 
+							int pagination = (int)request.getAttribute("pagination"); 
+						%>
 						<ul class="pagination">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
+						 	<%--
+						 		pagination 총 페이지 수 .. 그만큼 루프를 돌림
+						 		 
+						 		
+						 	 --%>
+							 	 <li class="prev">
+									<a href="<%= request.getContextPath()%>/pagingEmp?page=1&pageSize=<%=pageVo.getPageSize()%>">«</a>
+								</li>
+						 	 <% for (int i =1; i <= (int)request.getAttribute("pagination"); i++) { %>
+						 	 
+						 	 	<%if (pageVo.getPage() == i){ %>
+						 	 		<li class="active"><span><%=i %></span></li>
+						 	 		
+						 	 	<%}else{ %>
+									<li><a href="<%=request.getContextPath()%>/pagingEmp?page=<%=i%>&pageSize=<%=pageVo.getPageSize()%>"><%=i %></a></li>
+						 	 	
+						 	 	<% }%>
+						 	 
+						 	 <%} %>
+						 	 	<li class="next">
+									<a href="<%= request.getContextPath()%>/pagingEmp?page=<%=pagination %>&pageSize=<%=pageVo.getPageSize()%>">»</a>
+								</li>
 						</ul>
 					</div>
 				</div>

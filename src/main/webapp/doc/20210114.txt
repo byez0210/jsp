@@ -15,7 +15,7 @@ db에서 삭제
 3. service, dao 삭제로직 생성 
 	
 상향식 (bottom up)
-sql => dao => daotest => servcie => serviceTest => controller => jsp
+sql => dao => daotest => service => serviceTest => controller => jsp
 
 
 사용자 상세조회 페이지 사용자 이미지 추가

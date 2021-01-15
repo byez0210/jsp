@@ -5,7 +5,7 @@
 	<li class="active"><a href="<%= request.getContextPath()%>/allUser"> 전체 사용자</a></li>
 	<li class="active"><a href="<%= request.getContextPath()%>/pagingUser"> 사용자 페이징 리스트</a></li>
 	<li class="active"><a href="<%= request.getContextPath()%>/allEmp"> 직원</a></li>
-	<li class="active"><a href="<%= request.getContextPath()%>/pagingEmp?page=1&pageSize=5"> 직원 페이징 리스트</a></li>
+	<li class="active"><a href="<%= request.getContextPath()%>/pagingEmp"> 직원 페이징 리스트</a></li>
 	<li class="active" ><a href="<%= request.getContextPath()%>/lprod/allLprod.jsp "> 제품</a></li>
 	
 	<%--

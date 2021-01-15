@@ -39,12 +39,10 @@ $(function(){
 </script>
 
 <body>
-
 	<%@ include file="/common/header.jsp"%>
-	
 	<div class="container-fluid">
 		<div class="row">
-
+		
 			<div class="col-sm-3 col-md-2 sidebar">
 				<%@ include file="/common/left.jsp"%>
 			</div>

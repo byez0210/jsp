@@ -45,7 +45,6 @@ public class RegistUser extends HttpServlet {
 		try {
 			reg_dt = sdf.parse(req.getParameter("reg_dt"));
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 
 		String alias = req.getParameter("alias");
@@ -71,7 +70,7 @@ public class RegistUser extends HttpServlet {
 		// 사용자 등록 실패 ==> 사용자 등록 페이지로 이동
 		else {
 			logger.debug("사용자 등록 실패 insertCnt 값:{}",insertCnt );
-			req.setAttribute("userVo", userVo);
+//			req.setAttribute("userVo", userVo);
 			doGet(req, resp);
 		}
 

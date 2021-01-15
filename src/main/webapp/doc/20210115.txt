@@ -1,0 +1,45 @@
+model1 :요청을 jsp가 접수 응답도 jsp에서 생성
+		비즈니스로직(model)이 jsp(view)안에서 호출됨
+		만약 다른 jsp엣에서도 동일한 비지니스 로직(model)을 사용할 경우
+		비지니스 로직의 변경 시 만은 코드 수정이 동반된다 ==> 유지보수의 어려움
+		
+model2 : 
+
+mvc 패턴 : model - view - controller
+		각 역할을 담당하는 객체를 분리
+		controller : 요청을 접수, 비지니스 로직을 호출 밎 저장(scope)
+		model : 비지니스 로직 처리
+		view : : 화면 출력 담당
+		
+		model1과 다르게 view와 model을분리
+		view에서 필요한 데이터는 scope 객체를 통해 받는다
+		
+Front Controller : 모든 요청을 하나의 객체가 접수 받는 형태
+					 장점 : ??
+					 
+POJO?
+
+표현언어(EL)
+scope 속성 사용 가능 
+수치 관계, 논리 연산
+
+표현식을 보다 쉽고 편리하게 사용할 수 있는 표현방법
+
+JSTL
+${vo.usernm},${map.key}
+java class method 호출 기능(커스텀 태그)
+EL기본객체 사용
+<사진 참고>
+${userList} 가 가능한 이유
+
+** pageContext() = jsp 기본객체와 pageContext동일
+	contextPath와 같은 reqeust객체를 사용하기 위해서 사용 
+
+EL : SJP 
+
+
+
+<과제>
+jsp기본객체
+
+jsp가 servlet변환된 것을 확인 

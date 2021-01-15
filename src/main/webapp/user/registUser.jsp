@@ -23,7 +23,7 @@
 <script
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-<%UserVo userVo = (UserVo) request.getAttribute("userVo");%>
+<%-- <%UserVo userVo = (UserVo) request.getAttribute("userVo");%> --%>
 	$(function() {
 		$("#addrBtn").on("click", function() {
 			new daum.Postcode({

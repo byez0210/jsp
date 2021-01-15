@@ -32,6 +32,8 @@ public class PagingUser extends HttpServlet {
 		// if /else ==> ? // 조건 ?  true 일 때 반환 값 : false일 때 반환할 값
 		// refactoring : 코드를 (깔끔하게) 바꾸는 기본 동작방식을 유지한채 변경하는 기법
 		
+//		alt + shift + l
+		
 		String pageParam = request.getParameter("page");
 		String pageSizeparam = request.getParameter("pageSize");
 
