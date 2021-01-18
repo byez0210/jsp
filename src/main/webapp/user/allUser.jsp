@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,10 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="<%=request.getContextPath()%> /css/dashboard.css"
+<link href="${pageContext.request.contextPath } /css/dashboard.css"
 	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
-		<%List<UserVo> userList = (List<UserVo>)request.getAttribute("userList"); %>
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -41,7 +42,7 @@
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
 					<div class="table-responsive">
-						<table class="table table-striped" action="<%=request.getContextPath()%>/allUser" method="GET">
+						<table class="table table-striped" action="${pageContext.request.contextPath }/allUser" method="GET">
 							<tr>
 								<th>사용자 아이디</th>
 								<th>사용자 이름</th>
@@ -49,18 +50,15 @@
 								<th>등록일시</th>
 								
 							</tr>
-							 
-							<%
-							for (int i = 0; i< userList.size(); i++){
-							%>
-							<tr>
-								<td><%=userList.get(i).getUserid() %></td>
-								<td><%=userList.get(i).getUsernm() %></td>
-								<td><%=userList.get(i).getAlias() %></td>
-								<td><%=userList.get(i).getReg_dt_fmt() %></td>
-							</tr>
+								<c:forEach items="${userList }" var="user">
+									<tr>
+										<td>${user.userid }</td>
+										<td>${user.usernm }</td>
+										<td>${user.alias }</td>
+										<td>${user.getReg_dt_fmt() }</td>
+									</tr>
+								</c:forEach>
 								
-							<%} %>
 							
 						</table>
 					</div>

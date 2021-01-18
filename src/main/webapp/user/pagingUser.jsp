@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +19,9 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="<%=request.getContextPath()%> /css/dashboard.css"
+<link href="${pageContext.request.contextPath }/css/dashboard.css"
 	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
-		<%List<UserVo> userList = (List<UserVo>)request.getAttribute("userList"); %>
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
 <script type="text/javascript">
 	// 문서로딩이 완료되고 나서 실행되는 영역
 	$(function(){
@@ -38,7 +38,7 @@
 </head>
 
 <body>
-	<form id="frm" action="<%=request.getContextPath() %>/user" >
+	<form id="frm" action="${pageContext.request.contextPath }/user" >
 		<input type="hidden" name="userid"  id="userid" value="">
 	</form>
 	
@@ -58,7 +58,7 @@
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
 					<div class="table-responsive">
-						<table class="table table-striped" action="<%=request.getContextPath()%>/allUser" method="GET">
+						<table class="table table-striped" action="${pageContext.request.contextPath }/allUser" method="GET">
 							<tr>
 								<th>사용자 아이디</th>
 								<th>사용자 이름</th>
@@ -67,27 +67,20 @@
 								
 							</tr>
 							 
-							<%
-							for (int i = 0; i< userList.size(); i++){
-							%>
-							<tr class="user" data-userid="<%=userList.get(i).getUserid() %>">
-								<td><%=userList.get(i).getUserid() %></td>
-								<td><%=userList.get(i).getUsernm() %></td>
-								<td><%=userList.get(i).getAlias() %></td>
-								<td><%=userList.get(i).getReg_dt_fmt() %></td>
-							</tr>
-								
-							<%} %>
-							
+							<c:forEach items="${userList }" var="user">
+								<tr class="user" data-userid="${user.userid }">
+									<td>${user.userid }</td>
+									<td>${user.usernm }</td>
+									<td>${user.alias }</td>
+									<td>${user.getReg_dt_fmt() }</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 
-					<a class="btn btn-default pull-right"  href="<%=request.getContextPath()%>/registUser">사용자 등록</a>
+					<a class="btn btn-default pull-right"  href="${pageContext.request.contextPath }/registUser">사용자 등록</a>
 
 					<div class="text-center">
-						<% PageVo pageVo = ((PageVo)request.getAttribute("pageVo"));
-
-						int pagination = (int)request.getAttribute("pagination");%>
 						<ul class="pagination">
 							<%-- 
 								 pagination 값이 4이므로 1부터 4번 반복된다
@@ -96,21 +89,20 @@
 								 전체 페이지 수 : 4페이지
 							 --%>
 							<li class="prev">
-								<a href="<%= request.getContextPath()%>/pagingUser?page=1&pageSize=<%=pageVo.getPageSize()%>">«</a>
+								<a href="${pageContext.request.contextPath }/pagingUser?page=1&pageSize=${pageVo.pageSize}">«</a>
 							</li>
-							<%for (int i = 1; i<=(int)request.getAttribute("pagination"); i++) { %>
-							
-								<%if (pageVo.getPage() == i) { %>
-									<li class="active">	<span><%=i %></span></li>
-									
-								<%}else{ %>
-									<li><a href="<%= request.getContextPath()%>/pagingUser?page=<%=i %>&pageSize=<%=pageVo.getPageSize()%>"><%=i %></a></li>
-								
-								<%} %>
-								
-							<%} %>
+								<c:forEach begin="1" end="${pagination }" var="i">
+									<c:choose>
+										<c:when test="${pageVo.page  == i}">
+											<li class="active">	<span>${i }</span></li>
+										</c:when>	
+										<c:otherwise>
+											<li><a href="${pageContext.request.contextPath }/pagingUser?page=${i }&pageSize=${pageVo.pageSize}">${i }</a></li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
 							<li class="next">
-								<a href="<%= request.getContextPath()%>/pagingUser?page=<%=pagination %>&pageSize=<%=pageVo.getPageSize()%>">»</a>
+								<a href="${pageContext.request.contextPath }/pagingUser?page=${pagination }&pageSize=${pageVo.pageSize}">»</a>
 							</li>
 						</ul>
 					</div>

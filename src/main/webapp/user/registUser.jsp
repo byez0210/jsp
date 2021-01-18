@@ -17,9 +17,9 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="<%=request.getContextPath()%> /css/dashboard.css"
+<link href="${pageContext.request.contextPath } /css/dashboard.css"
 	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
 <script
 	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -78,17 +78,18 @@
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<form class="form-horizontal" role="form"
-					action="<%=request.getContextPath()%>/registUser" method="post">
+					action="${pageContext.request.contextPath }/registUser" method="post">
+					
 					<%-- 					<input type="hidden" name="userid" value="<%=user.getUserid()%>"> --%>
 					<div class="form-group">
 						<label for="userId" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
-						<%
+						<%-- <%
 							String userid = request.getParameter("userid");
 							userid = userid == null ? "" : userid;
-							%>
+							%> --%>
 							<input type="text" class="form-control" id="userid" name="userid"
-								placeholder="" value="<%=userid%>">
+								placeholder="" value="${param.userid }">
 						</div>
 					</div>
 
@@ -96,48 +97,32 @@
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
 						<div class="col-sm-10">
-							<%
-							String usernm = request.getParameter("usernm");
-								usernm = usernm == null ? "" : usernm;
-							%>
 							<input type="text" class="form-control" id="usernm" name="usernm"
-								placeholder="" value="<%=usernm%>">
+								placeholder="" value="${param.usernm }">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">비밀번호</label>
 						<div class="col-sm-10">
-							<%
-							String pass = request.getParameter("pass");
-								pass = pass == null ? "" : pass;
-							%>
 							<input type="password" class="form-control" id="pass" name="pass"
-								placeholder="********" value="<%=pass%>">
+								placeholder="********" value="${param.pass }">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">등록일시</label>
 						<div class="col-sm-10">
-							<%
-							String reg_dt = request.getParameter("reg_dt");
-								reg_dt = reg_dt == null ? "" : reg_dt;
-							%>
 							<input type="text" class="form-control" id="reg_dt" name="reg_dt"
-								placeholder="" value="<%=reg_dt%>">
+								placeholder="" value="${param.reg_dt }">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">별명</label>
 						<div class="col-sm-10">
-							<%
-							String alias = request.getParameter("alias");
-								alias = alias == null ? "" : alias;
-							%>
 							<input type="text" class="form-control" id="alias" name="alias"
-								placeholder="" value="<%=alias%>">
+								placeholder="" value="${param.alias }">
 						</div>
 					</div>
 
@@ -156,19 +141,15 @@
 						<label for="userNm" class="col-sm-2 control-label">상세주소</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="addr2" name="addr2"
-								placeholder="상세주소" value="">
+								placeholder="상세주소" value="${param.addr2 }">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">우편번호</label>
 						<div class="col-sm-10">
-						<%
-							String zipcode = request.getParameter("zipcode");
-								zipcode = zipcode == null ? "" : zipcode;
-							%>
 							<input type="text" class="form-control" id="zipcode"
-								name="zipcode" placeholder="우편번호" value="<%=zipcode %>" readonly="readonly">
+								name="zipcode" placeholder="우편번호" value="${param.zipcode }" readonly="readonly">
 						</div>
 					</div>
 

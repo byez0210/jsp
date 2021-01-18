@@ -66,7 +66,7 @@ public class loginController extends HttpServlet {
 		//로그인 성공 ==> service를 통해 데이터 베스에 저장된 값과 일할 때 
 		// session에 데이터베이스에서 죄회한 사용자 정보(userVo)를 저장
 		if(user !=null && pass.equals(user.getPass())) {
-			req.getRequestDispatcher(req.getContextPath() +"/main.jsp").forward(req, resp);
+			req.getRequestDispatcher("/main.jsp").forward(req, resp);
 		}
 		//로그인 실패
 		else {

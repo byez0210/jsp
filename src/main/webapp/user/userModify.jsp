@@ -17,9 +17,9 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="<%=request.getContextPath()%> /css/dashboard.css"
+<link href="${pageContext.request.contextPath } /css/dashboard.css"
 	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 
@@ -54,7 +54,7 @@
 			
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<% UserVo user = (UserVo)request.getAttribute("user"); %>
-				<form class="form-horizontal" role="form" action="<%=request.getContextPath()%>/userModify" method="post">
+				<form class="form-horizontal" role="form" action="${pageContext.request.contextPath }/userModify" method="post">
 					<input type="hidden" name="userid" value="<%=user.getUserid()%>">
 
 					<div class="form-group">

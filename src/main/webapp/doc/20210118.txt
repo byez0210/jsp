@@ -1,0 +1,53 @@
+EL,JSTL ==> 표현식 스크립클릿을 걷어내기 위함
+	 		==>jsp 파일을 최대한 태그 처럼보이기 위함
+
+	pageContext. jsp에 내장객체를 얻어올 수 있음
+
+JSTL 태그 라이브러리 사용방법 지시자 <%@ %>
+1. taglib 지시자를 선언
+<%@ taglib prefix="네임스페이스, 개발자 편한대로 지정가능, 관습적으로 많이 사용하는 prefix를 보통 따름"
+		   uri="사용하려고 하는 태그의 식별자" %>
+
+core 태그 라이브러리는 : c 
+국제화 태그 라이브러리 : fmt
+
+CORE tag 라이브러리
+속성저장
+request.setAttibute("속성명",속성값);
+session.setAttibute("속성명",속성값);
+
+
+el사용시 null 값 처리를 자동으로 함 ==> registUser.jsp null 처리 간소화 작업
+
+<%=request.getContextPath()%> ==> ${pageContext.request.contextPath }
+
+<%=request.getContextPath()%>
+<%= request.getContextPath()%>
+<%=request.getContextPath() %>
+
+${pageContext.}
+${param.}
+${속성명}
+
+${requeset..} ㅜ_ㅜ
+
+
+JSTL CORE 조건 제어(java if)
+if 		==> java 단일 if
+choose  ==> java if, else if, else
+
+JSTL 반복문(for,향산된 for) **** 많이 사용
+forEach
+timesTable.jsp
+
+allUser.jsp 수정
+pagingUser.jsp 수정
+
+JSTL core URL 
+import : 특정 url에서 반환하는 값(html)을 호출하는 곳에 추가하는 기능  
+redirect : 클라이언트에게 다른 url로 재전송 요청
+url : url 경로 작성 core_loop에서 실행
+
+JSTL core 기타
+catch
+out
