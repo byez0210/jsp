@@ -20,9 +20,9 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="${pageContext.request.contextPath }/css/dashboard.css"
+<link href="${cp}/css/dashboard.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp}/css/blog.css" rel="stylesheet">
 <script type="text/javascript">
 	// 문서로딩이 완료되고 나서 실행되는 영역
 	$(function(){
@@ -39,7 +39,7 @@
 </head>
 
 <body>
-	<form id="frm" action="${pageContext.request.contextPath }/user" >
+	<form id="frm" action="${cp}/user" >
 		<input type="hidden" name="userid"  id="userid" value="">
 	</form>
 	
@@ -59,7 +59,7 @@
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
 					<div class="table-responsive">
-						<table class="table table-striped" action="${pageContext.request.contextPath }/allUser" method="GET">
+						<table class="table table-striped" action="${cp}/allUser" method="GET">
 							<tr>
 								<th>사용자 아이디</th>
 								<th>사용자 이름</th>
@@ -79,7 +79,7 @@
 						</table>
 					</div>
 
-					<a class="btn btn-default pull-right"  href="${pageContext.request.contextPath }/registUser">사용자 등록</a>
+					<a class="btn btn-default pull-right"  href="${cp}/registUser">사용자 등록</a>
 
 					<div class="text-center">
 						<ul class="pagination">
@@ -90,7 +90,7 @@
 								 전체 페이지 수 : 4페이지
 							 --%>
 							<li class="prev">
-								<a href="${pageContext.request.contextPath }/pagingUser?page=1&pageSize=${pageVo.pageSize}">«</a>
+								<a href="${cp}/pagingUser?page=1&pageSize=${pageVo.pageSize}">«</a>
 							</li>
 								<c:forEach begin="1" end="${pagination }" var="i">
 									<c:choose>
@@ -98,12 +98,12 @@
 											<li class="active">	<span>${i }</span></li>
 										</c:when>	
 										<c:otherwise>
-											<li><a href="${pageContext.request.contextPath }/pagingUser?page=${i }&pageSize=${pageVo.pageSize}">${i }</a></li>
+											<li><a href="${cp}/pagingUser?page=${i }&pageSize=${pageVo.pageSize}">${i }</a></li>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
 							<li class="next">
-								<a href="${pageContext.request.contextPath }/pagingUser?page=${pagination }&pageSize=${pageVo.pageSize}">»</a>
+								<a href="${cp}/pagingUser?page=${pagination }&pageSize=${pageVo.pageSize}">»</a>
 							</li>
 						</ul>
 					</div>

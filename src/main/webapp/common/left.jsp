@@ -2,11 +2,11 @@
     pageEncoding="UTF-8"%>
 <ul class="nav nav-sidebar">
 	<li class="active"><a href="#">Main <span class="sr-only">(current)</span></a></li>
-	<li class="active"><a href="${pageContext.request.contextPath }/allUser"> 전체 사용자</a></li>
-	<li class="active"><a href="${pageContext.request.contextPath }/pagingUser"> 사용자 페이징 리스트</a></li>
-	<li class="active"><a href="${pageContext.request.contextPath }/allEmp"> 직원</a></li>
-	<li class="active"><a href="${pageContext.request.contextPath }/pagingEmp"> 직원 페이징 리스트</a></li>
-	<li class="active" ><a href="${pageContext.request.contextPath }/lprod/allLprod.jsp "> 제품</a></li>
+	<li class="active"><a href="${cp}/allUser"> 전체 사용자</a></li>
+	<li class="active"><a href="${cp}/pagingUser"> 사용자 페이징 리스트</a></li>
+	<li class="active"><a href="${cp}/allEmp"> 직원</a></li>
+	<li class="active"><a href="${cp}/pagingEmp"> 직원 페이징 리스트</a></li>
+	<li class="active" ><a href="${cp}/lprod/allLprod.jsp "> 제품</a></li>
 	
 	<%--
 		localhost/pagingUser?page=1&pageSize=5 로요청 시 

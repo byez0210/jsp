@@ -20,9 +20,9 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="${pageContext.request.contextPath } /css/dashboard.css"
+<link href="${cp} /css/dashboard.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp}/css/blog.css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +44,7 @@
 				<div class="col-sm-8 blog-main">
 					<h2 class="sub-header">사용자</h2>
 					<div class="table-responsive">
-						<table class="table table-striped" action="${pageContext.request.contextPath }/allUser" method="GET">
+						<table class="table table-striped" action="${cp}/allUser" method="GET">
 							<tr>
 								<th>사용자 아이디</th>
 								<th>사용자 이름</th>

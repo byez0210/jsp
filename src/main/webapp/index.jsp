@@ -11,6 +11,6 @@
 %>
 	webapp/index.jsp ==> localhost/index.jsp
 	webapp/brown.png
-	<img alt="" src="${pageContext.request.contextPath }/image/brown.png">
+	<img alt="" src="${cp}/image/brown.png">
 </body>
 </html>

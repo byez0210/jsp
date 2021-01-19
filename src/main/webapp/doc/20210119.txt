@@ -26,7 +26,7 @@ parameter관려 메소드를 4 개 재정의
 wrapper==>HTTPServletRequstWrapper 클래스 상속
 
  
-Resource Bundle : 국제화 서비스를 위한 번역파일
+Resource Bundle : 국제화 서비스를 위한 번역파일ㄴ
 파일 이름 형식 : 리소스번들이름_언어코드_국가코드.properties
 					msg_ko.properties
 					msg_en.properties
@@ -42,10 +42,33 @@ Resource Bundle : 국제화 서비스를 위한 번역파일
 jsp에서는 코드부분을 기술하면 국제화 처리에 의헤 사용자가 요청한 언어의 메세지로 치환된다
 
 
-selectLang.jsp 요청을 ㅂ보내는 두가지 경로가 존재
-1. 웹브라우저 주소줄에 localhost/jstl/selectLang.jsp를 입력 (파라미터가없음)
-2. selectLang.jsp안에 있는 select boc의 갓이 변경되었을 떄 (파라미터가 있음) 
+selectLang.jsp 요청을 보내는 두가지 경로가 존재
+1. 웹브라우저 주소줄에 localhost/jstl/selectLang.jsp를 입력 (파라미터가 없음)
+2. selectLang.jsp안에 있는 select box의 값이 변경되었을 떄 (파라미터가 있음) 
 
 
 넘버 포맷
+날짜  allUser.jsp
 
+
+${pageContext.request.contextPath }
+
+==>
+${cp}
+
+이벤트 리스너 
+이벤트 종류
+ 1. life cycle
+  	1) request			:  ServleRequestListener
+  	2) sesion			:  HttpSessionListener
+  	3) application		:  ServletContextListner
+  		${pageContext.request.contextPath } ==> ${cp}
+  		서버가 기동이 되었을 때
+  		application scope에 cp라는 속성으로 contextPath 값을 저장
+ 2. attribute 
+ 	add/replace/remove
+ 	사용자가 로그인을 할 경우 : S_USER 속성을 session에 추가
+ 	set<String>로 로그인한 사용자 아이디 관리
+  		
+리스너 생성 (알맞은 인테이스 구현한 클래스 생성)
+리스너 등록(web.xml)

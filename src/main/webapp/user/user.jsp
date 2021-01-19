@@ -19,21 +19,21 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="${pageContext.request.contextPath } /css/dashboard.css"
+<link href="${cp} /css/dashboard.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp}/css/blog.css" rel="stylesheet">
 <script type="text/javascript">
 	
 //문서로딩이 완료 되었을 때
 $(function(){
 	$("#modifyBtn").on("click",function(){
 		$("#frm").attr("method","get");
-		$("#frm").attr("action","${pageContext.request.contextPath }/userModify");
+		$("#frm").attr("action","${cp}/userModify");
 		$("#frm").submit();
 	});	
 	$("#deleteBtn").on("click",function(){
 		$("#frm").attr("method","post");
-		$("#frm").attr("action","${pageContext.request.contextPath }/deleteUser");
+		$("#frm").attr("action","${cp}/deleteUser");
 		$("#frm").submit();
 	});	
 })
@@ -56,7 +56,7 @@ $(function(){
 					<div class="form-group">
 						<label for="userId" class="col-sm-2 control-label">사용자 사진</label>
 						<div class="col-sm-10">
-							<img src="${pageContext.request.contextPath }/profile/${user.userid }.png"/>
+							<img src="${cp}/profile/${user.userid }.png"/>
 						</div>
 					</div>
 					

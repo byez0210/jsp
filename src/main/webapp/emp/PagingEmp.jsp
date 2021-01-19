@@ -18,9 +18,9 @@
 
 <%@ include file="/common/common_lib.jsp"%>
 
-<link href="${pageContext.request.contextPath } /css/dashboard.css"
+<link href="${cp} /css/dashboard.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp}/css/blog.css" rel="stylesheet">
 		<%List<EmpVo> empList = (List<EmpVo>)request.getAttribute("empList"); %>
 </head>
 
@@ -87,7 +87,7 @@
 						 	 		<li class="active"><span><%=i %></span></li>
 						 	 		
 						 	 	<%}else{ %>
-									<li><a href="${pageContext.request.contextPath }/pagingEmp?page=<%=i%>&pageSize=<%=pageVo.getPageSize()%>"><%=i %></a></li>
+									<li><a href="${cp}/pagingEmp?page=<%=i%>&pageSize=<%=pageVo.getPageSize()%>"><%=i %></a></li>
 						 	 	
 						 	 	<% }%>
 						 	 
