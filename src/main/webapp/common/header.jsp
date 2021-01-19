@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
@@ -11,7 +12,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">JSP/SPRING</a>
+				<a class="navbar-brand" href="#">JSP/SPRING <c:if test="${S_USER != null }"> ${S_USER.userid }[${S_USER.usernm }]</c:if> </a>
+												 JSP/SPRING brown[브라운]
+												 JSP/SPRING [] ==> JSP/SPRING
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">

@@ -34,9 +34,9 @@ ${requeset..} ㅜ_ㅜ
 
 JSTL CORE 조건 제어(java if)
 if 		==> java 단일 if
-choose  ==> java if, else if, else
+choose *** ==> java if, else if, else
 
-JSTL 반복문(for,향산된 for) **** 많이 사용
+JSTL 반복문(for,향상된 for) **** 많이 사용
 forEach
 timesTable.jsp
 
@@ -45,9 +45,50 @@ pagingUser.jsp 수정
 
 JSTL core URL 
 import : 특정 url에서 반환하는 값(html)을 호출하는 곳에 추가하는 기능  
+core_import.jsp
+
 redirect : 클라이언트에게 다른 url로 재전송 요청
 url : url 경로 작성 core_loop에서 실행
 
 JSTL core 기타
-catch
-out
+catch 컨트롤러
+out default 값 설정 
+
+
+FILTER
+요청을 처리할 servlet, jsp로 요청을 전달되기 전에 사전에 먼저 요청을 받아
+공통적인 작업을 처리할 수 있는 객체
+
+1. 필터는 여러개를 등록할 수 있다 
+  . 요청 - 필터 1 -필터2 ./....- 최종적으로 해당 요청을 처리할 servlet,jsp로 요청이 전달
+    servlet,jsp에 의해 응답이 생성되면 거쳐온 필터의 역순으로 응답이 전달된다
+    servlet,jsp ==> 필터2  - 필터 1 -- 최종 응답 전달
+2. 필터 생성방법
+  .Filter 인터페이스 구현 
+    . init, destory, doFilter
+3. 필터 등록
+	web.xml 등록
+	@WebFilter
+	
+십습 : 요청 URI 통계필터
+	request.getRequestURI()
+	Map<String, Integer> map;
+	key - uri, 값은 - 요청 횟수
+	
+		/login.jsp, 5
+		/pagingUser, 15
+		 
+	요청 통계자료를 담은 map객체를 다른 servlet,jsp에서도 활용하려면 ?? applicationScope에 저장
+ 	
+필터의 기능 
+로그인
+url 통계
+
+전처리 요청을 사전에 처리할 때 
+후처리 응답할 때 
+
+필터 구현
+메서드 3개 초기화, 필터, 종료
+web 매핑
+(filter 등록)
+

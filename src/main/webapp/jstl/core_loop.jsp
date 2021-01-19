@@ -82,7 +82,7 @@
  	<h3>url 작성</h3>
  	<a href="<c:url value="/userRegist"/>">사용자 등록</a>
  	<a href="${pageContext.request.contextPath }/userRegist">사용자 등록</a>
- 	<a href="${cp }/userRegist">사용자 등록</a>
+ 	<a href="${cp }/userRegist">사용자 등록</a><br>
  	
  	var 속성을 적용하지 않는 경우 : 태그를 작성한 곳에 출력 <c:url value="/userRegist"/> <br>
  	var 속성을 적용한 경우 : var 속성으로 저장만 된다 (el을 통해 활용)<c:url value="/userRegist" var="url"/><br>

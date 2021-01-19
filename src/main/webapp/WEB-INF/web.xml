@@ -26,6 +26,24 @@
     <servlet-name>basicServlet</servlet-name>
     <url-pattern>/basicServlet</url-pattern>
   </servlet-mapping>
+    <filter>
+    <display-name>encodingFilter</display-name>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>kr.or.ddit.filter.encoding</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>requestCountFilter</filter-name>
+    <filter-class>kr.or.ddit.filter.RequestCounterFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>requestCountFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <error-page>
     <error-code>404</error-code>
     <location>/error/404/404.jsp</location>
@@ -42,14 +60,12 @@
     <exception-type>java.lang.RuntimeException</exception-type>
     <location>/error/type/runError.jsp</location>
   </error-page>
-  
   <resource-ref>
-   <description>DB Connection</description>
-   <res-ref-name>jdbc/oracleDB</res-ref-name>
-   <res-type>javax.sql.DataSource</res-type>
-   <res-auth>Container</res-auth>
-</resource-ref>
-  
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/oracleDB</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
   <servlet>
     <description></description>
     <display-name>PagingUser</display-name>
@@ -60,4 +76,5 @@
     <servlet-name>PagingUser</servlet-name>
     <url-pattern>/PagingUser</url-pattern>
   </servlet-mapping>
+
 </web-app>

@@ -18,7 +18,7 @@
 		
 		test 속성에서 많이 하는 실수
 		
-		1. test 속성 안에 조건을 기술 할 떄는 el 식에 포함해서 작성을 해야한다
+		1. test 속성 안에 조건을 기술 할 때는 el 식에 포함해서 작성을 해야한다
 		${userid } == "brown"  X
 		${userid } == 'brown'  X
 		${userid  == 'brown'}  O
