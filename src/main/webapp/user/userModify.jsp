@@ -2,6 +2,8 @@
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,14 +55,13 @@
 			</div>
 			
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<% UserVo user = (UserVo)request.getAttribute("user"); %>
 				<form class="form-horizontal" role="form" action="${pageContext.request.contextPath }/userModify" method="post">
-					<input type="hidden" name="userid" value="<%=user.getUserid()%>">
+					<input type="hidden" name="userid" value="${user.userid }">
 
 					<div class="form-group">
 						<label for="userId" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
-							<label class="control-label"><%=user.getUserid() %></label>
+							<label class="control-label">${user.userid }</label>
 						</div>
 					</div>
 
@@ -69,7 +70,7 @@
 						<label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="usernm"
-								name="usernm" placeholder=<%=user.getUsernm() %> value="<%=user.getUsernm() %>">
+								name="usernm" placeholder="${user.userid }" value="${user.usernm }">
 						</div>
 					</div>
 					
@@ -77,7 +78,7 @@
 						<label for="userNm" class="col-sm-2 control-label">비밀번호</label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="userpass"
-								name="pass" placeholder="********" value="<%=user.getPass()%>">
+								name="pass" placeholder="********" value="${user.pass }">
 						</div>
 					</div>
 					
@@ -85,7 +86,7 @@
 						<label for="userNm" class="col-sm-2 control-label">등록일시</label>
 						<div class="col-sm-10">
 						<input type="text" class="form-control" id="reg_dt"
-								name="reg_dt" placeholder=<%=user.getReg_dt_fmt() %> value="<%=user.getReg_dt_fmt()%>">
+								name="reg_dt" placeholder=<fmt:formatDate value="${user.reg_dt }" pattern="yyyy.MM.dd"/> value="<fmt:formatDate value="${user.reg_dt }" pattern="yyyy.MM.dd"/>">
 						</div>
 					</div>
 					
@@ -93,7 +94,7 @@
 						<label for="userNm" class="col-sm-2 control-label">별명</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="userAlias"
-								name="alias" placeholder="<%=user.getAlias() %>" value="<%=user.getAlias() %>"  >
+								name="alias" placeholder="${user.alias }" value="${user.alias }"  >
 						</div>
 					</div>
 					
@@ -101,7 +102,7 @@
 						<label for="userNm" class="col-sm-2 control-label">도로주소</label>
 						<div class="col-sm-8">
 							<input type="text" class="form-control" id="addr1"
-									name="addr1" placeholder="도로주소" value="<%=user.getAddr1() %>" readonly="readonly">
+									name="addr1" placeholder="도로주소" value="${user.addr1 }" readonly="readonly">
 						</div>
 						<div class="col-sm-2">
 							<button type="button" id="addrBtn" class="btn btn-default">주소검색</button>
@@ -112,7 +113,7 @@
 						<label for="userNm" class="col-sm-2 control-label">상세주소</label>
 						<div class="col-sm-10">
 						<input type="text" class="form-control" id="addr2"
-								name="addr2"placeholder="상세주소" value="<%=user.getAddr2() %>">
+								name="addr2"placeholder="상세주소" value="${user.addr2 }">
 						</div>
 					</div>
 					
@@ -120,7 +121,7 @@
 						<label for="userNm" class="col-sm-2 control-label">우편번호</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="zipcode"
-								name="zipcode" placeholder="우편번호"  value="<%=user.getZipcode() %>" readonly="readonly">
+								name="zipcode" placeholder="우편번호"  value="${user.zipcode }" readonly="readonly">
 						</div>
 					</div>
 					
