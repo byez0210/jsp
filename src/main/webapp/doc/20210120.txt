@@ -1,0 +1,17 @@
+String contentDisposition = "form-data; name="file"; filename="brown.png" ";
+
+FileUtil.getFileName(contentDisposition)을 테스트 할 수 있는 테스트 코드를 작성 
+
+==> brown.png
+
+TDD : Test Driven Development  -- 지속적으로 수정하고 만들어가는 것이 중요 순서는 별로 
+테스트 코드 ==  성공 ==> 새로운 요구사항 ==> 테스트 코드 ==> 실패 ==> 운영코드 수정(refactoring)
+					    새로운 요구사항 ==> 테스트 코드 ==> 실패 ==> 운영코드 수정 
+					    새로운 요구사항 ==> 테스트 코드 ==> 실패 ==> 운영코드 수정 
+					    새로운 요구사항 ==> 테스트 코드 ==> 실패 ==> 운영코드 수정 
+					    새로운 요구사항 ==> 테스트 코드 ==> 실패 ==> 운영코드 수정 
+					    
+파일업로드 시 준비사할
+1. form 태그 시 enctype 속성 ==> enctype="multipart/form-data"
+2. form 태그 시 method  속성 ==> method ="post"
+3. servlet ==> @MultipartConfig

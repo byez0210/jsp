@@ -78,7 +78,7 @@
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<form class="form-horizontal" role="form"
-					action="${cp}/registUser" method="post">
+					action="${cp}/registUser" method="post" enctype="multipart/form-data">
 					
 					<%-- 					<input type="hidden" name="userid" value="<%=user.getUserid()%>"> --%>
 					<div class="form-group">
@@ -89,7 +89,8 @@
 							userid = userid == null ? "" : userid;
 							%> --%>
 							<input type="text" class="form-control" id="userid" name="userid"
-								placeholder="" value="${param.userid }">
+								placeholder="사용자 아이디" value="${param.userid }">
+							<input type="file" class="form-control" name="profile"/>
 						</div>
 					</div>
 
@@ -98,7 +99,7 @@
 						<label for="userNm" class="col-sm-2 control-label">사용자 이름</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="usernm" name="usernm"
-								placeholder="" value="${param.usernm }">
+								placeholder="사용자 이름" value="${param.usernm }">
 						</div>
 					</div>
 
@@ -114,7 +115,7 @@
 						<label for="userNm" class="col-sm-2 control-label">등록일시</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="reg_dt" name="reg_dt"
-								placeholder="" value="${param.reg_dt }">
+								placeholder="등록일시" value="${param.reg_dt }">
 						</div>
 					</div>
 
@@ -122,7 +123,7 @@
 						<label for="userNm" class="col-sm-2 control-label">별명</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="alias" name="alias"
-								placeholder="" value="${param.alias }">
+								placeholder="별명" value="${param.alias }">
 						</div>
 					</div>
 

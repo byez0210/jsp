@@ -55,9 +55,17 @@
 			</div>
 			
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<form class="form-horizontal" role="form" action="${cp}/userModify" method="post">
+				<form class="form-horizontal" role="form" action="${cp}/userModify" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="userid" value="${user.userid }">
 
+					<div class="form-group">
+						<label for="userId" class="col-sm-2 control-label">사용자 사진</label>
+						<div class="col-sm-10">
+							<img src="${cp }/profile/${user.userid}.png"/>
+							<input type="file" class="form-control" id="profile" name="profile" />
+						</div>
+					</div>
+					
 					<div class="form-group">
 						<label for="userId" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-10">
@@ -86,7 +94,7 @@
 						<label for="userNm" class="col-sm-2 control-label">등록일시</label>
 						<div class="col-sm-10">
 						<input type="text" class="form-control" id="reg_dt"
-								name="reg_dt" placeholder=<fmt:formatDate value="${user.reg_dt }" pattern="yyyy.MM.dd"/> value="<fmt:formatDate value="${user.reg_dt }" pattern="yyyy.MM.dd"/>">
+								name="reg_dt" placeholder=<fmt:formatDate value="${user.reg_dt }" pattern="yyyy-MM-dd"/> value="<fmt:formatDate value="${user.reg_dt }" pattern="yyyy.MM.dd"/>">
 						</div>
 					</div>
 					

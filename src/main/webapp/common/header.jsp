@@ -13,8 +13,8 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">JSP/SPRING <c:if test="${S_USER != null }"> ${S_USER.userid }[${S_USER.usernm }]</c:if> </a>
-												 JSP/SPRING brown[브라운]
-												 JSP/SPRING [] ==> JSP/SPRING
+<!-- 												 JSP/SPRING brown[브라운] -->
+<!-- 												 JSP/SPRING [] ==> JSP/SPRING -->
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
